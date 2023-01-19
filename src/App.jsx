@@ -2,10 +2,14 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Video from "./components/Video";
-import MiApi from "./components/miApi";
+import MiApi from "./components/MiApi";
+
 
 
 const App = () => {
+
+  const [champs, setChamps] = useState([]);
+  const [search, setSearch] = useState('');
 
   // const [champs, setChamps] = useState([]);
   // const [search, setSearch] = useState('')
@@ -34,17 +38,13 @@ const App = () => {
   //     // }
   //     // console.log('***********')
   //   });
-
-
   //   console.log(arrayChamps);
-
 
   //   setChamps(arrayChamps);
   //   const ordenado = [];
   //   for (const champ of arrayChamps) {
   //     ordenado.push(champ)
-  //   }
-    
+  //   }    
   //   const arrayOrdenado = ordenado.sort((a, b) => {
   //     const nombreA = a.name;
   //     const nombreB = b.name;
@@ -58,14 +58,8 @@ const App = () => {
   //     }
   //     return 0;
   //   });
-
   //   console.log(arrayOrdenado)
-
   // }
-
-
-
-
   // useEffect(() => {
   //   getChamps()
   // }, []);
@@ -124,7 +118,7 @@ const App = () => {
           </table>
         </section>
       </div> */}
-      <MiApi></MiApi>
+      <MiApi champs={champs} setChamps={setChamps} search={search} setSearch={setSearch}></MiApi>
 
       {/* FOOTER */}
       <Footer></Footer>

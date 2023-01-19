@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react"
 
 
-const MiApi = () => {
+const MiApi = ({champs, setChamps, search, setSearch}) => {
 
-    const [champs, setChamps] = useState([]);
-    const [search, setSearch] = useState('');
+    
 
     const getChamps = async () => {
         console.log('***********2');
-        const respuesta = await fetch('http://ddragon.leagueoflegends.com/cdn/13.1.1/data/es_MX/champion.json');
+        const respuesta = await fetch('https://ddragon.leagueoflegends.com/cdn/13.1.1/data/es_MX/champion.json');
         const dataRes = await respuesta.json();
 
         //? como la api trae los valores en objetos, creo un arreglo vacío (arrayChamps) antes de recorrerlo con 'Object.keys'
@@ -56,8 +55,6 @@ const MiApi = () => {
                         placeholder="Aatrox" aria-label="Search" onChange={(e) => setSearch(e.target.value)} value={search}>
                     </input>
                     <button className="button-52" role="button" type="submit">Buscar Campeón</button>
-                    <button>HOlamundo</button>
-                    <button>holagente</button>
                 </form>
             </section>
             
@@ -86,8 +83,8 @@ const MiApi = () => {
                                     <td className="td">{item.info.magic}</td>
                                     <td className="td">{item.info.difficulty}</td>
                                     <td className="td">
-                                        <a href={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${item.id}_0.jpg`} target="_blank" rel="noopener noreferrer">
-                                            <img src={`http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${item.id}.png`} className="card-img-top" alt="..."></img>
+                                        <a href={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${item.id}_0.jpg`} target="_blank" rel="noopener noreferrer">
+                                            <img src={`https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/${item.id}.png`} className="card-img-top" alt="..."></img>
                                         </a>
                                     </td>
                                 </tr>
