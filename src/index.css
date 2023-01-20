@@ -1,12 +1,12 @@
 @font-face {
     font-family: fuenteRandom;
-    src: url(font/BeaufortforLOL-Bold.ttf);
+    src: url(fonts/BeaufortforLOL-Bold.ttf);
 
 }
 
 @font-face {
     font-family: usual;
-    src: url(font/Spiegel_TT_Regular.ttf);
+    src: url(fonts/Spiegel_TT_Regular.ttf);
 }
 
 * {

@@ -6,13 +6,12 @@ const MiApi = ({champs, setChamps, search, setSearch}) => {
     
 
     const getChamps = async () => {
-        console.log('***********2');
         const respuesta = await fetch('https://ddragon.leagueoflegends.com/cdn/13.1.1/data/es_MX/champion.json');
         const dataRes = await respuesta.json();
 
+        
         //? como la api trae los valores en objetos, creo un arreglo vacío (arrayChamps) antes de recorrerlo con 'Object.keys'
         const arrayChamps = [];
-
 
         const mappedResults = Object.keys(dataRes.data).map(key => {
             const value = dataRes.data[key];
@@ -24,8 +23,8 @@ const MiApi = ({champs, setChamps, search, setSearch}) => {
         for (const champ of arrayChamps) {
             ordenado.push(champ)
         }
-
         console.log(arrayChamps)
+        
         const arrayOrdenado = ordenado.sort((a, b) => {
             const nombreA = a.name;
             const nombreB = b.name;
