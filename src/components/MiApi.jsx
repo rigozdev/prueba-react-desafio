@@ -18,6 +18,7 @@ const MiApi = ({champs, setChamps, search, setSearch}) => {
             arrayChamps.push(value)            
         });
 
+        // ? aquí setChamps toma el valor del arreglo
         setChamps(arrayChamps);
         const ordenado = [];
         for (const champ of arrayChamps) {
@@ -25,27 +26,30 @@ const MiApi = ({champs, setChamps, search, setSearch}) => {
         }
         console.log(arrayChamps)
         
-        const arrayOrdenado = ordenado.sort((a, b) => {
-            const nombreA = a.name;
-            const nombreB = b.name;
 
-            if (nombreA > nombreB) {
-                return -1;
+        //? Fución de ordenación
+        // const arrayOrdenado = ordenado.sort((a, b) => {
+        //     const nombreA = a.name;
+        //     const nombreB = b.name;
 
-            }
-            if (nombreA < nombreB) {
-                return 1;
-            }
-            return 0;
-        });
-        console.log(arrayOrdenado);
+        //     if (nombreA > nombreB) {
+        //         return -1;
 
-    }
-    
+        //     }
+        //     if (nombreA < nombreB) {
+        //         return 1;
+        //     }
+        //     return 0;
+        // });
+        // console.log(arrayOrdenado);
+
+    }   
 
     useEffect(() => {
         getChamps()
     }, []);
+
+
     return (
         <div className="table-container">
             <section className="form-container">
